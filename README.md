@@ -81,6 +81,26 @@ wget -O - https://raw.githubusercontent.com/Tasshack/dreame-vacuum/master/instal
 ```
 
 
+### Docker Compose (Home Assistant + this integration)
+
+You can run Home Assistant and mount this repository as a custom integration using Docker Compose.
+
+1. Clone this repository.
+2. Start Home Assistant:
+
+```sh
+docker compose up -d
+```
+
+3. Open Home Assistant at `http://localhost:8123`, finish onboarding, then add the integration from:
+   `Settings -> Devices & Services -> Add Integration -> Dreame Vacuum`.
+
+The compose file mounts:
+- `./homeassistant/config` to persist Home Assistant data.
+- `./custom_components/dreame_vacuum` into `/config/custom_components/dreame_vacuum` (read-only).
+
+> `network_mode: host` is used for local network discovery and direct LAN access to the vacuum.
+
 ### Via [HACS](https://hacs.xyz/)
 <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=Tasshack&repository=dreame-vacuum&category=integration" target="_blank"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" alt="Open your Home Assistant instance and open a repository inside the Home Assistant Community Store." /></a>
 
