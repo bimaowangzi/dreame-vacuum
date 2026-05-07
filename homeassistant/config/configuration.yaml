@@ -1,0 +1,5 @@
+# Basic Home Assistant configuration for Docker usage.
+default_config:
+
+# Integration is loaded via the UI:
+# Settings -> Devices & Services -> Add Integration -> Dreame Vacuum

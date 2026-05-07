@@ -1,0 +1,11 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:stable
+    volumes:
+      - ./homeassistant/config:/config
+      - ./custom_components/dreame_vacuum:/config/custom_components/dreame_vacuum:ro
+    environment:
+      - TZ=Etc/UTC
+    restart: unless-stopped
+    network_mode: host
